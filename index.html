@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0b14">
+<title>Shain Feurtado Contact</title>
+<style>
+  :root{
+    --accent:#7c5cff;      /* main accent colour */
+    --accent2:#00d4ff;     /* secondary accent colour */
+    --bg:#0b0b14;
+    --card:rgba(255,255,255,.06);
+    --line:rgba(255,255,255,.12);
+    --text:#f4f4fb;
+    --muted:#a3a3b8;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--text);
+    display:flex;justify-content:center;align-items:center;
+    min-height:100vh;min-height:100dvh;padding:24px 16px;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  /* animated background blobs */
+  .blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.55;z-index:0;animation:float 18s ease-in-out infinite}
+  .b1{width:380px;height:380px;background:var(--accent);top:-120px;left:-120px}
+  .b2{width:320px;height:320px;background:var(--accent2);bottom:-120px;right:-100px;animation-delay:-6s}
+  .b3{width:220px;height:220px;background:#ff4fa3;top:45%;left:60%;opacity:.3;animation-delay:-12s}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,30px) scale(1.1)}66%{transform:translate(-30px,20px) scale(.95)}}
+
+  .card{
+    position:relative;z-index:1;width:100%;max-width:420px;
+    background:var(--card);border:1px solid var(--line);border-radius:28px;
+    padding:36px 24px 28px;text-align:center;
+    backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+    animation:rise .7s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+  .avatar{
+    width:112px;height:112px;margin:0 auto 18px;border-radius:50%;padding:3px;
+    background:conic-gradient(from 180deg,var(--accent),var(--accent2),#ff4fa3,var(--accent));
+    animation:spin 8s linear infinite;
+  }
+  .avatar-inner{
+    width:100%;height:100%;border-radius:50%;background:#15152a;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    font-size:38px;font-weight:700;letter-spacing:1px;animation:spin 8s linear infinite reverse;
+  }
+  .avatar-inner img{width:100%;height:100%;object-fit:cover}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  h1{font-size:28px;font-weight:750;letter-spacing:-.5px}
+  .role{margin-top:6px;font-size:15px;color:var(--muted)}
+  .role b{color:var(--text);font-weight:600}
+  .tagline{margin:14px auto 0;font-size:14px;line-height:1.5;color:var(--muted);max-width:320px}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;margin-top:14px;
+    font-size:12px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--muted)
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:#2ee59d;box-shadow:0 0 10px #2ee59d}
+
+  .save{
+    display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+    margin-top:26px;padding:17px;border:0;border-radius:18px;cursor:pointer;
+    font:inherit;font-size:17px;font-weight:700;color:#fff;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    box-shadow:0 12px 30px -8px var(--accent);transition:transform .15s,box-shadow .15s;
+  }
+  .save:active{transform:scale(.97)}
+  .save svg{width:20px;height:20px}
+
+  .actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+  .act{
+    display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 4px;
+    border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04);
+    color:var(--text);text-decoration:none;font-size:12px;transition:background .15s,transform .15s;
+  }
+  .act:active{transform:scale(.95);background:rgba(255,255,255,.1)}
+  .act svg{width:22px;height:22px}
+
+  .links{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+  .link{
+    display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;
+    border:1px solid var(--line);background:rgba(255,255,255,.04);
+    color:var(--text);text-decoration:none;font-size:15px;text-align:left;transition:background .15s;
+  }
+  .link:hover{background:rgba(255,255,255,.09)}
+  .link svg{width:20px;height:20px;flex:none;opacity:.9}
+  .link span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .link .arrow{opacity:.4;flex:none}
+
+  .foot{margin-top:24px;display:flex;justify-content:center;gap:18px}
+  .foot button{background:none;border:0;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px}
+  .foot svg{width:15px;height:15px}
+
+  .toast{
+    position:fixed;left:50%;bottom:28px;transform:translate(-50%,40px);opacity:0;z-index:5;
+    background:#1c1c30;border:1px solid var(--line);padding:12px 18px;border-radius:14px;font-size:14px;
+    transition:.3s;pointer-events:none
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+<main class="card">
+  <div class="avatar"><div class="avatar-inner" id="avatar"></div></div>
+  <h1 id="name"></h1>
+  <p class="role" id="role"></p>
+  <p class="tagline" id="tagline"></p>
+  <div class="badge" id="badge"><span class="dot"></span><span id="badgeText"></span></div>
+
+  <button class="save" id="saveBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+    Save Contact
+  </button>
+
+  <div class="actions" id="actions"></div>
+  <div class="links" id="links"></div>
+
+  <div class="foot">
+    <button id="shareBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4M12 2v13"/></svg>Share</button>
+    <button id="copyBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy link</button>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =====================================================
+   ✏️  EDIT YOUR DETAILS HERE — nothing else needs changing
+   Leave any field as "" to hide it.
+   ===================================================== */
+const ME = {
+  firstName: "Shain",
+  lastName:  "Feurtado",
+  title:     "AV Systems Engineer - DJ",
+  company:   "SF Media Group",
+  tagline:   "Designing and commissioning AV systems for conference rooms, venues and control spaces.",
+  badge:     "Available for projects",
+  phone:     "+14088884111",          // international format, no spaces
+  email:     "sfmg@me.com",
+  website:   "https://www.shaythedj.com",
+  location:  "San Jose, California",
+  photo:     "",                      // e.g. "https://example.com/wp-content/uploads/me.jpg" — blank = initials
+  links: [
+    { label: "LinkedIn",  url: "https://linkedin.com/in/shainf", icon: "linkedin" },
+    { label: "Instagram", url: "https://instagram.com/djshizzle408",   icon: "instagram" },
+    { label: "Book a call", url: "https://www.shaythedj.com",    icon: "calendar" },
+  ]
+};
+/* ===================================================== */
+
+const ICONS = {
+  phone:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>',
+  sms:'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+  email:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>',
+  web:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  linkedin:'<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>',
+  instagram:'<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/>',
+  calendar:'<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+  link:'<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.8 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',
+  pin:'<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'
+};
+const svg = n => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[n]||ICONS.link}</svg>`;
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fullName = `${ME.firstName} ${ME.lastName}`.trim();
+
+/* render */
+document.title = `${fullName} — Contact`;
+$('name').textContent = fullName;
+$('role').innerHTML = [ME.title && esc(ME.title), ME.company && `<b>${esc(ME.company)}</b>`].filter(Boolean).join(' · ');
+ME.tagline ? $('tagline').textContent = ME.tagline : $('tagline').remove();
+ME.badge ? $('badgeText').textContent = ME.badge : $('badge').remove();
+$('avatar').innerHTML = ME.photo
+  ? `<img src="${esc(ME.photo)}" alt="${esc(fullName)}">`
+  : esc((ME.firstName[0]||'') + (ME.lastName[0]||''));
+
+const acts = [
+  ME.phone   && {href:`tel:${ME.phone}`, icon:'phone', label:'Call'},
+  ME.phone   && {href:`sms:${ME.phone}`, icon:'sms',   label:'Text'},
+  ME.email   && {href:`mailto:${ME.email}`, icon:'email', label:'Email'},
+  ME.website && {href:ME.website, icon:'web', label:'Website'},
+].filter(Boolean);
+$('actions').style.gridTemplateColumns = `repeat(${acts.length},1fr)`;
+$('actions').innerHTML = acts.map(a =>
+  `<a class="act" href="${esc(a.href)}" ${a.icon==='web'?'target="_blank" rel="noopener"':''}>${svg(a.icon)}${a.label}</a>`).join('');
+
+const links = [...ME.links];
+if (ME.location) links.push({label:ME.location, url:`https://maps.apple.com/?q=${encodeURIComponent(ME.location)}`, icon:'pin'});
+$('links').innerHTML = links.map(l =>
+  `<a class="link" href="${esc(l.url)}" target="_blank" rel="noopener">${svg(l.icon)}<span>${esc(l.label)}</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></a>`).join('');
+
+/* vCard download */
+const v = s => String(s||'').replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/([,;])/g,'\\$1');
+function buildVCard(){
+  const L = [
+    'BEGIN:VCARD','VERSION:3.0',
+    `N:${v(ME.lastName)};${v(ME.firstName)};;;`,
+    `FN:${v(fullName)}`,
+    ME.company && `ORG:${v(ME.company)}`,
+    ME.title   && `TITLE:${v(ME.title)}`,
+    ME.phone   && `TEL;TYPE=CELL,VOICE:${ME.phone}`,
+    ME.email   && `EMAIL;TYPE=INTERNET,WORK:${ME.email}`,
+    ME.website && `URL:${ME.website}`,
+    ...ME.links.map(l => `URL:${l.url}`),
+    ME.tagline && `NOTE:${v(ME.tagline)}`,
+    'END:VCARD'
+  ].filter(Boolean);
+  return L.join('\r\n');
+}
+$('saveBtn').onclick = () => {
+  const blob = new Blob([buildVCard()], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `${fullName.replace(/\s+/g,'_')}.vcf`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+  toast('Opening contact…');
+};
+
+/* share + copy */
+$('shareBtn').onclick = async () => {
+  if (navigator.share) { try { await navigator.share({title:fullName, url:location.href}); } catch(e){} }
+  else copy();
+};
+$('copyBtn').onclick = copy;
+function copy(){ navigator.clipboard?.writeText(location.href).then(()=>toast('Link copied ✓'), ()=>toast(location.href)); }
+function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2200); }
+</script>
+</body>
+</html>
